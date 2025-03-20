@@ -60,19 +60,6 @@ const NavBar = () => {
           <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "contact" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
             <a href="#contact" className="hover:text-gray-300 focus:text-gray-300">Contact</a>
           </li>
-
-          {/* <li className="relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] after:w-[0%] after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[50%]">
-            <a href="#aboutMe" className="hover:text-gray-300">About Me</a>
-          </li>
-          <li className="relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] after:w-[0%] after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[50%]">
-            <a href="#projects" className="hover:text-gray-300">Projects</a>
-          </li>
-          <li className="relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] after:w-[0%] after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[50%]">
-            <a href="#inspiration" className="hover:text-gray-300">Inspiration</a>
-          </li>
-          <li className="relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] after:w-[0%] after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[50%]">
-            <a href="#contact" className="hover:text-gray-300">Contact</a>
-          </li> */}
         </ul>
 
         <div className="md:hidden flex">

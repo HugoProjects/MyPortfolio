@@ -1,23 +1,105 @@
+import { useRef, useState } from "react"
+import emailjs from '@emailjs/browser';
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import Modal from "react-modal";
 
-const contact = () => {
+Modal.setAppElement("#root");
+
+const Contact = () => {
+
+  const [isOpen, setIsOpen] = useState(true); //State para controlar o modal
+  const form = useRef(); //Referencia para armazenar os dados do formulário //Aceder depois com form.current
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_195fkkh', 'template_onckv4z', form.current, {
+        publicKey: 'NLcIgXk51qjlZNDUQ',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          openModal();
+          // Fecha o modal após 3 segundos (opcional)
+          setTimeout(() => {
+            setIsOpen(false);
+          }, 3000);
+          form.current.reset();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <section id="contact" className="mb-20">
-      <h1>CONTACT FORM</h1>
-      <div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat veritatis dolores praesentium adipisci aliquam a ipsam id facere delectus deserunt.</p>
-        <p>A, perferendis quaerat! Incidunt assumenda velit, asperiores deserunt vel dolor libero unde quibusdam iure maiores, sunt voluptatum corrupti consectetur quia.</p>
-        <p>Possimus excepturi est quas placeat iste architecto molestias consectetur minima a sequi! Molestiae impedit reprehenderit excepturi eum tempore fugiat distinctio?</p>
-        <p>Repellat rem ratione, laboriosam suscipit quaerat ipsam mollitia optio molestiae incidunt ipsa soluta, dolor numquam, tenetur itaque facere hic dolorem.</p>
-        <p>Reprehenderit magnam sunt, a ex, repellat qui beatae dignissimos exercitationem nesciunt hic illo assumenda animi nam doloribus cumque sequi eveniet.</p>
-        <p>Sed possimus sequi beatae, labore tenetur dignissimos unde laborum aperiam doloremque iste laboriosam dolorum placeat provident quod impedit deleniti veritatis.</p>
-        <p>Reprehenderit fugiat consequuntur molestiae ad dolorem tempore perspiciatis impedit. Porro eum vitae, nemo vel id quod minus illum maxime minima.</p>
-        <p>Veritatis laudantium iure officiis ad quod reiciendis. Harum tenetur hic, architecto ullam recusandae exercitationem accusantium blanditiis autem quia, labore quam.</p>
-        <p>Distinctio quibusdam temporibus quis quam vitae, aliquid eum ipsum nostrum illo illum laborum cupiditate rerum voluptas asperiores? Repudiandae, cum eveniet.</p>
-        <p>Earum quod vitae, repellendus et ipsam odio laboriosam ex esse vel ipsum deleniti, rem neque temporibus? Debitis, consequatur quam. Excepturi!</p>
+    <section id="contact" className="flex flex-col md:flex-row justify-center gap-10 md:gap-20 p-6 md:p-12 relative md:w-[95%] lg:w-[85%] xl:w-[80%] mx-auto mb-56">
+
+      {/* Borda superior e inferior com gradiente */}
+      <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      <div className="absolute bottom-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      
+      {/* Borda esquerda e direita com outro gradiente */}
+      <div className="absolute top-10 bottom-10 left-0 w-[1px] bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+      <div className="absolute top-10 bottom-10 right-0 w-[1px] bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+      
+
+      <div className="basis-1/3 flex flex-col gap-4 md:gap-8">
+        <h1 className="text-4xl font-semibold">Contact</h1>
+        <p>Feel free to reach out - whether it's a project idea, a job opportunity, or just a casual chat, I'd be happy to talk!</p>
+        <ul className="flex md:flex-col text-xl gap-8 md:gap-4 mt-4">
+          <li className="">
+            <a href="https://github.com/HugoProjects" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-blue-200 focus:text-blue-200 transition-transform duration-300 hover:scale-110"><FaGithub className="text-2xl"/>Github</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/hugo-bastos-engineer/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-blue-200 focus:text-blue-200"><FaLinkedin className="text-2xl"/>Linkedin</a>
+          </li>
+        </ul>
       </div>
+      
+
+      <form ref={form} onSubmit={sendEmail} onKeyDown="" className="basis-2/3">
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-1">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[rgb(20,20,25)] p-2"/>
+          </div>
+          <div className="flex flex-col gap-1">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2"/>
+          </div>
+          <div className="flex flex-col gap-1">
+            <label>Message</label>
+            <textarea name="message" placeholder="Your Message..." required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 min-h-48"/>
+          </div>
+          <button type="submit" className="bg-[rgb(20,20,25)] border-2 border-gray-300 text-white text-lg font-semibold w-[25%] p-2 rounded hover:bg-blue-200 hover:text-[rgb(20,20,25)] focus:bg-blue-200 focus:text-[rgb(20,20,25)]">Send</button>
+        </div>
+      </form>
+
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeModal} // Fecha o modal quando clicado fora ou pressionando ESC
+        contentLabel="Contact Sucefully Sent"
+        className="fixed inset-0 flex flex-col justify-center items-center z-50 bg-gray-300 rounded p-4"
+        overlayClassName="modal-overlay"
+      >
+        <h2 className="text-xl font-semibold ">Thanks for your message!</h2>
+        <p>I'll get back to you as soon as possible!</p>
+        <button onClick={closeModal}>Close</button>
+      </Modal>
 
     </section>
   )
 }
 
-export default contact
+export default Contact

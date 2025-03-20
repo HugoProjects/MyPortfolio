@@ -54,9 +54,9 @@ const Inspiration = () => {
   };
 
   return (
-    <section id="inspiration" className="py-40 flex flex-col sm:flex-row items-center sm:items-stretch sm:justify-start w-full h-full">
+    <section id="inspiration" className="py-48 flex flex-col sm:flex-row items-center sm:items-stretch sm:justify-start w-full h-full">
       <p className="text-4xl font-semibold xl:whitespace-nowrap group">
-        <span tabIndex={0} role="button" className="cursor-pointer" onClick={handleQuote} onKeyDown={(e) => e.key === 'Enter' && handleQuote()}>Get Inspired <TbReload className="inline align-bottom group-hover:animate-spin group-focus-within:animate-spin"/></span>
+        <span tabIndex={0} role="button" className="cursor-pointer" onClick={handleQuote} onKeyDown={(e) => e.key === 'Enter' && handleQuote()}>Get Inspired <TbReload className="text-blue-200 inline align-bottom group-hover:animate-spin group-focus-within:animate-spin"/></span>
       </p>
 
       <div className="hidden sm:block w-[4px] h-[full] bg-gray-300 mx-8"></div>
