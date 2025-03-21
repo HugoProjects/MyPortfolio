@@ -84,13 +84,12 @@ body {
   z-index: 40;
 }
 
-.underline-gradient {
+.underline-brush {
   display: inline;
-  background: linear-gradient(225deg, transparent 20%, rgba(191, 219, 254, 0.3) 30%, rgba(191, 219, 254, 0.5) 40%, rgba(191, 219, 254, 0.7) 50%, rgba(191, 219, 254, 0.5) 60%, rgba(191, 219, 254, 0.3) 70%, transparent 80%);
-  background-size: 125% 75%;
+  background-image: url('./assets/BrushBackground.svg');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-
 }
 
 .meme{
