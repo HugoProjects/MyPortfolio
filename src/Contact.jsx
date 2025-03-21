@@ -9,7 +9,7 @@ Modal.setAppElement("#root");
 
 const Contact = () => {
 
-  const [isOpen, setIsOpen] = useState(true); //State para controlar o modal
+  const [isOpen, setIsOpen] = useState(false); //State para controlar o modal
   const form = useRef(); //Referencia para armazenar os dados do formulário //Aceder depois com form.current
 
   const sendEmail = (e) => {
@@ -60,16 +60,16 @@ const Contact = () => {
         <p>Feel free to reach out - whether it's a project idea, a job opportunity, or just a casual chat, I'd be happy to talk!</p>
         <ul className="flex md:flex-col text-xl gap-8 md:gap-4 mt-4">
           <li className="">
-            <a href="https://github.com/HugoProjects" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-blue-200 focus:text-blue-200 transition-transform duration-300 hover:scale-110"><FaGithub className="text-2xl"/>Github</a>
+            <a href="https://github.com/HugoProjects" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-blue-200 focus-visible:text-blue-200 transition-transform duration-200 hover:scale-105 focus-visible:scale-105"><FaGithub className="text-2xl"/>Github</a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/hugo-bastos-engineer/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-blue-200 focus:text-blue-200"><FaLinkedin className="text-2xl"/>Linkedin</a>
+            <a href="https://www.linkedin.com/in/hugo-bastos-engineer/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-blue-200 focus-visible:text-blue-200 transition-transform duration-200 hover:scale-105 focus-visible:scale-105"><FaLinkedin className="text-2xl"/>Linkedin</a>
           </li>
         </ul>
       </div>
       
 
-      <form ref={form} onSubmit={sendEmail} onKeyDown="" className="basis-2/3">
+      <form ref={form} onSubmit={sendEmail} className="basis-2/3">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <label>Name</label>
@@ -83,7 +83,7 @@ const Contact = () => {
             <label>Message</label>
             <textarea name="message" placeholder="Your Message..." required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 min-h-48"/>
           </div>
-          <button type="submit" className="bg-[rgb(20,20,25)] border-2 border-gray-300 text-white text-lg font-semibold w-[25%] p-2 rounded hover:bg-blue-200 hover:border-blue-200 hover:text-[rgb(20,20,25)] focus:bg-blue-200 focus:text-[rgb(20,20,25)] focus:border-blue-200">Send</button>
+          <button type="submit" className="bg-[rgb(20,20,25)] border-2 border-gray-300 text-white text-lg font-semibold w-32 p-2 mt-2 rounded hover:bg-blue-200 hover:border-blue-200 hover:text-[rgb(20,20,25)] focus-visible:bg-blue-200 focus-visible:text-[rgb(20,20,25)] focus-visible:border-blue-200 active:bg-gray-300 active:border-gray-300 active:text-white">Send</button>
         </div>
       </form>
 
@@ -96,7 +96,7 @@ const Contact = () => {
       >
         <h2 className="text-2xl font-semibold text-[rgb(20,20,25)]">Thanks for your message!</h2>
         <p className="text-lg text-[rgb(20,20,25)]">I'll get back to you as soon as possible <RiMailSendLine className="inline"/></p>
-        <button onClick={closeModal} className="bg-[rgb(20,20,25)] border-[rgb(20,20,25)] border-2 text-white text-lg font-semibold px-6 py-2 mt-2 rounded-md hover:bg-blue-200 hover:text-[rgb(20,20,25)] focus:bg-blue-200 focus:text-[rgb(20,20,25)]">Close</button>
+        <button onClick={closeModal} className="bg-[rgb(20,20,25)] border-[rgb(20,20,25)] border-2 text-white text-lg font-semibold px-6 py-2 mt-2 rounded-md hover:bg-blue-200 hover:text-[rgb(20,20,25)] focus-visible:bg-blue-200 focus-visible:text-[rgb(20,20,25)]">Close</button>
       </Modal>
 
     </section>

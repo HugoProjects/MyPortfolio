@@ -14,7 +14,7 @@ const AboutMe = () => {
           <br/>
           I graduated with a bachelor's degree in Computer Engineering from <a href="https://www.isep.ipp.pt" target="_blank" rel="noopener noreferrer"><abbr title="Instituto Superior de Engenharia do Porto">ISEP</abbr></a> and I have been actively enhancing my web dev skills through various online courses.
           <br/>
-          Originally from Porto, Portugal, I am currently based in London, United Kingdom, and open to new opportunities. Feel free to check my <a href="https://www.linkedin.com/in/hugo-bastos-engineer/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline">Social Profile <FiExternalLink /></a>.
+          Originally from Porto, Portugal, I am currently based in London, United Kingdom, and open to new opportunities. Feel free to check my <a href="https://www.linkedin.com/in/hugo-bastos-engineer/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline focus:underline">Social Profile <FiExternalLink /></a>.
         </p>
 
         <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-10 w-[50%]"></div>

@@ -3,8 +3,8 @@ const ProjectModal = () => {
   return (
     <section>
       
+
       
-      ProjectModal
 
     </section>
   )

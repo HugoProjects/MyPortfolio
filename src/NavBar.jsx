@@ -40,7 +40,7 @@ const NavBar = () => {
       <div className="max-w-full sm:max-w-[85%] xl:max-w-[75%] mx-auto flex justify-between items-center h-20 bg-[#141419]">
 
         <div className="text-white text-2xl font-bold icon-pulsing">
-          <a href="mailto:huguinhobastos@hotmail.com" className="flex items-center">
+          <a href="#contact" className="flex items-center">
             <img src={profilePicRightCartoon} alt="Hire Me Button" className="h-16" />
             <p className="typing-effect text-2xl font-semibold text-blue-200 ml-4">Hire Me</p>
             <ImReply className="text-xl"/>
