@@ -2,6 +2,7 @@ import { useRef, useState } from "react"
 import emailjs from '@emailjs/browser';
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { RiMailSendLine } from "react-icons/ri";
 import Modal from "react-modal";
 
 Modal.setAppElement("#root");
@@ -82,7 +83,7 @@ const Contact = () => {
             <label>Message</label>
             <textarea name="message" placeholder="Your Message..." required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 min-h-48"/>
           </div>
-          <button type="submit" className="bg-[rgb(20,20,25)] border-2 border-gray-300 text-white text-lg font-semibold w-[25%] p-2 rounded hover:bg-blue-200 hover:text-[rgb(20,20,25)] focus:bg-blue-200 focus:text-[rgb(20,20,25)]">Send</button>
+          <button type="submit" className="bg-[rgb(20,20,25)] border-2 border-gray-300 text-white text-lg font-semibold w-[25%] p-2 rounded hover:bg-blue-200 hover:border-blue-200 hover:text-[rgb(20,20,25)] focus:bg-blue-200 focus:text-[rgb(20,20,25)] focus:border-blue-200">Send</button>
         </div>
       </form>
 
@@ -90,12 +91,12 @@ const Contact = () => {
         isOpen={isOpen}
         onRequestClose={closeModal} // Fecha o modal quando clicado fora ou pressionando ESC
         contentLabel="Contact Sucefully Sent"
-        className="fixed inset-0 flex flex-col justify-center items-center z-50 bg-gray-300 rounded p-4"
+        className="fixed flex flex-col justify-center items-center gap-2 z-50 bg-blue-200 rounded px-8 py-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         overlayClassName="modal-overlay"
       >
-        <h2 className="text-xl font-semibold ">Thanks for your message!</h2>
-        <p>I'll get back to you as soon as possible!</p>
-        <button onClick={closeModal}>Close</button>
+        <h2 className="text-2xl font-semibold text-[rgb(20,20,25)]">Thanks for your message!</h2>
+        <p className="text-lg text-[rgb(20,20,25)]">I'll get back to you as soon as possible <RiMailSendLine className="inline"/></p>
+        <button onClick={closeModal} className="bg-[rgb(20,20,25)] border-[rgb(20,20,25)] border-2 text-white text-lg font-semibold px-6 py-2 mt-2 rounded-md hover:bg-blue-200 hover:text-[rgb(20,20,25)] focus:bg-blue-200 focus:text-[rgb(20,20,25)]">Close</button>
       </Modal>
 
     </section>

@@ -67,11 +67,11 @@ body {
 }
 
 .icon-shadow {
-  transition: filter 0.3s ease-in-out;
+  transition: filter 0.1s ease-in-out;
 }
 
 .icon-shadow:hover {
-  filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.1));
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
 }
 
 .modal-overlay {
