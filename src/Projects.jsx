@@ -74,7 +74,7 @@ const Projects = () => {
 
                 <div className="flex flex-wrap justify-center gap-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 mt-2 mb-3">
                   {project.usedTech.map((tech) => (
-                    <span className=' text-[rgba(20,20,25)] font-semibold rounded py-1 px-2 underline-brush'>{tech}</span>
+                    <span key={tech} className=' text-[rgba(20,20,25)] font-semibold rounded py-1 px-2 underline-brush'>{tech}</span>
                   ))}
                 </div>
 
@@ -82,16 +82,16 @@ const Projects = () => {
                 <div className="flex flex-wrap justify-center gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100">
                   <a
                     href={project.linkDemo}
-                    tabIndex={0}
                     target='_blank'
                     rel="noopener noreferrer"
                     className="bg-[#141419] text-white font-semibold text-center w-32 px-6 py-2 border-2 rounded-md drop-shadow hover:bg-white hover:text-[#141419] focus-visible:bg-white focus-visible:text-[#141419] transition"
                   >
-                    Live
+                    View Live
                   </a>
                   <a
                     href={project.linkRepo}
-                    tabIndex={0}
+                    target='_blank'
+                    rel="noopener noreferrer"
                     className="bg-[#141419] font-semibold text-center w-32 px-6 py-2 border-2 rounded-md drop-shadow hover:bg-white hover:text-[#141419] focus-visible:bg-white focus-visible:text-[#141419] transition"
                   >
                     Repository

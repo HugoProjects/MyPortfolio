@@ -26,7 +26,7 @@ const Contact = () => {
           // Fecha o modal após 3 segundos (opcional)
           setTimeout(() => {
             setIsOpen(false);
-          }, 3000);
+          }, 5000);
           form.current.reset();
         },
         (error) => {
@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="flex flex-col md:flex-row justify-center gap-10 md:gap-20 p-6 md:p-12 relative md:w-[95%] lg:w-[85%] xl:w-[80%] mx-auto mb-56">
+    <section id="contact" className="flex flex-col md:flex-row justify-center gap-10 md:gap-20 p-6 md:p-12 relative md:w-[95%] lg:w-[85%] xl:w-[80%] mx-auto mb-24 md:mb-56">
 
       {/* Borda superior e inferior com gradiente */}
       <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
@@ -53,7 +53,6 @@ const Contact = () => {
       {/* Borda esquerda e direita com outro gradiente */}
       <div className="absolute top-10 bottom-10 left-0 w-[1px] bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
       <div className="absolute top-10 bottom-10 right-0 w-[1px] bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
-      
 
       <div className="basis-1/3 flex flex-col gap-4 md:gap-8">
         <h1 className="text-4xl font-semibold">Contact</h1>
@@ -72,16 +71,16 @@ const Contact = () => {
       <form ref={form} onSubmit={sendEmail} className="basis-2/3">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="Name" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[rgb(20,20,25)] p-2"/>
+            <label htmlFor="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Name" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[rgb(20,20,25)] p-2"/>
           </div>
           <div className="flex flex-col gap-1">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Email" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2"/>
+            <label htmlFor="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Email" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2"/>
           </div>
           <div className="flex flex-col gap-1">
-            <label>Message</label>
-            <textarea name="message" placeholder="Your Message..." required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 min-h-48"/>
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message..." required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 min-h-48"/>
           </div>
           <button type="submit" className="bg-[rgb(20,20,25)] border-2 border-gray-300 text-white text-lg font-semibold w-32 p-2 mt-2 rounded hover:bg-blue-200 hover:border-blue-200 hover:text-[rgb(20,20,25)] focus-visible:bg-blue-200 focus-visible:text-[rgb(20,20,25)] focus-visible:border-blue-200 active:bg-gray-300 active:border-gray-300 active:text-white">Send</button>
         </div>

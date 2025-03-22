@@ -7,6 +7,7 @@ const sections = ["aboutMe", "projects", "inspiration", "contact"];
 const NavBar = () => {
 
   const [activeSection, setActiveSection] = useState("");
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
 
@@ -35,9 +36,10 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 w-full px-4 z-10">
+    <>
+    <nav className="fixed top-0 left-0 right-0 z-10 max-w-full sm:max-w-[85%] xl:max-w-[75%] mx-auto">
 
-      <div className="max-w-full sm:max-w-[85%] xl:max-w-[75%] mx-auto flex justify-between items-center h-20 bg-[#141419]">
+      <div className="flex justify-between items-center h-20 bg-[#141419] px-4">
 
         <div className="text-white text-2xl font-bold icon-pulsing">
           <a href="#contact" className="flex items-center">
@@ -49,29 +51,71 @@ const NavBar = () => {
 
         <ul className="hidden md:flex justify-between gap-8 text-xl">
           <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "aboutMe" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
-            <a href="#aboutMe" className="hover:text-gray-300 focus:text-gray-300">About Me</a>
+            <a href="#aboutMe" className="hover:text-gray-300 focus-visible:text-gray-300">About Me</a>
           </li>
           <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "projects" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
-            <a href="#projects" className="hover:text-gray-300 focus:text-gray-300">Projects</a>
+            <a href="#projects" className="hover:text-gray-300 focus-visible:text-gray-300">Projects</a>
           </li>
           <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "inspiration" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
-            <a href="#inspiration" className="hover:text-gray-300 focus:text-gray-300">Inspiration</a>
+            <a href="#inspiration" className="hover:text-gray-300 focus-visible:text-gray-300">Inspiration</a>
           </li>
           <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "contact" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
-            <a href="#contact" className="hover:text-gray-300 focus:text-gray-300">Contact</a>
+            <a href="#contact" className="hover:text-gray-300 focus-visible:text-gray-300">Contact</a>
           </li>
         </ul>
 
         <div className="md:hidden flex">
-          <button className='group'>
-            <span className="block w-6 h-1 bg-white group-hover:bg-gray-300 group-focus:bg-gray-300"></span>
-            <span className="block w-6 h-1 bg-white group-hover:bg-gray-300 group-focus:bg-gray-300 mt-1 mb-1"></span>
-            <span className="block w-6 h-1 bg-white group-hover:bg-gray-300 group-focus:bg-gray-300"></span>
+          <button className="group" aria-label="Menu" onClick={() => setMobileMenu(!mobileMenu)}>
+            <span className={`block w-6 h-1 bg-white group-hover:bg-gray-300 group-focus-visible:bg-gray-300 ${mobileMenu ? "rotate-45 translate-y-1/2" : ""} transition-transform duration-300`}></span>
+            <span className={`block w-6 h-1 bg-white group-hover:bg-gray-300 group-focus-visible:bg-gray-300 mt-1 mb-1 ${mobileMenu ? "hidden" : ""}`}></span>
+            <span className={`block w-6 h-1 bg-white group-hover:bg-gray-300 group-focus-visible:bg-gray-300 ${mobileMenu ? "-rotate-45 -translate-y-1/2" : ""} transition-transform duration-300`}></span>
           </button>
         </div>
 
       </div>
+
+      {/* Sidebar menu para o mobile, abrir com o hamburguer menu  */}
+      {/* {mobileMenu &&
+      <div className="relative flex justify-end min-h-screen">
+        <ul className={`md:hidden flex flex-col items-end gap-8 text-xl z-10 bg-[#141419] opacity-95 sticky -right-96 top-20 bottom-0 pr-4 pl-8 ${mobileMenu ? "right-0" : ""} transition-all duration-300 `}>
+          <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "aboutMe" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+            <a href="#aboutMe" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>About Me</a>
+          </li>
+          <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "projects" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+            <a href="#projects" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>Projects</a>
+          </li>
+          <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "inspiration" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+            <a href="#inspiration" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>Inspiration</a>
+          </li>
+          <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "contact" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+            <a href="#contact" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>Contact</a>
+          </li>
+        </ul>
+      </div>
+      } */}
+
+      {/* Fullbar menu para o mobile, abrir com o hamburguer menu  */}
+      {mobileMenu &&
+      <ul className={`md:hidden flex flex-col items-center justify-center gap-12 text-2xl z-10 bg-[#141419] opacity-95 fixed right-0 left-0 top-20 bottom-0 px-4 py-6 ${mobileMenu ? "top-20" : ""} transition-all duration-300 ease-in-out`}>
+        <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "aboutMe" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+          <a href="#aboutMe" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>About Me</a>
+        </li>
+        <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "projects" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+          <a href="#projects" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>Projects</a>
+        </li>
+        <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "inspiration" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+          <a href="#inspiration" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>Inspiration</a>
+        </li>
+        <li className={`relative after:content-[''] after:absolute after:left-1/2 after:-bottom-[25%] after:h-[1px] ${activeSection === "contact" ? "after:w-[33%]" : "after:w-[0%]" } after:bg-gradient-to-r after:from-transparent after:via-gray-300 after:to-transparent after:transition-[width] after:duration-300 after:ease-in-out after:-translate-x-1/2 hover:after:w-[66%] focus-within:after:w-[66%]`}>
+          <a href="#contact" className="hover:text-gray-300 focus-visible:text-gray-300" onClick={() => setMobileMenu(false)}>Contact</a>
+        </li>
+      </ul>
+      }
+
     </nav>
+
+      
+  </>
   )
 }
 

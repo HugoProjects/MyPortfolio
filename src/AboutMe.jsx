@@ -6,7 +6,7 @@ import { FiExternalLink } from "react-icons/fi";
 
 const AboutMe = () => {
   return (
-    <section id="aboutMe" className="min-h-screen pt-20 pb-12 md:pb-0 flex flex-col-reverse justify-center md:flex-row md:justify-between items-center gap-2 md:gap-10">
+    <section id="aboutMe" className="min-h-screen pt-20 pb-20 md:pb-10 flex flex-col-reverse justify-center md:flex-row md:justify-between items-center gap-2 md:gap-10">
       <div className='flex flex-col justify-center items-center md:items-start'>
         <p>
           <span className="opacity-50 block">My name is</span>
