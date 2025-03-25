@@ -92,7 +92,22 @@ body {
   background-position: center;
 }
 
-.meme{
-  position: absolute;
-  
+.heroImage{
+  position: relative;
+  transition: transform 300ms ease-in-out
+}
+
+.heroImage:hover{
+  transform: scale(1.03);
+}
+
+.meme {
+  opacity: 0;
+  transform: translateX(-20px) rotate(7deg);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.heroImage:hover .meme {
+  opacity: 1;
+  transform: translateX(0) rotate(7deg) scale(1.03);
 }

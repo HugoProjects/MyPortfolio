@@ -37,7 +37,6 @@ const projects = [
 
 const Projects = () => {
   return (
-    <>
       <section id="projects" className="flex flex-col justify-center items-center">
         <h1 className="text-4xl font-semibold">Projects</h1>
         <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-5 w-[50%]"></div>
@@ -102,10 +101,7 @@ const Projects = () => {
             </article>
           ))}
         </div>
-
       </section>
-
-    </>
   )
 }
 
