@@ -38,13 +38,18 @@ const NavBar = () => {
 
   return (
     <motion.nav 
-      initial={{opacity:0, y: -50}}
-      animate={{opacity:1, y: 0}}
-      transition={{duration: 0.5, delay: 4}}
+      // initial={{opacity:0, y: -50}}
+      // animate={{opacity:1, y: 0}}
+      // transition={{duration: 0.5, delay: 4}}
       className="fixed top-0 left-0 right-0 z-20 max-w-full sm:max-w-[85%] xl:max-w-[75%] mx-auto"
     >
 
-      <div className="flex justify-between items-center h-20 bg-[#141419] px-4">
+      <motion.div 
+        initial={{opacity:0, y: -50}}
+        animate={{opacity:1, y: 0}}
+        transition={{duration: 0.5, delay: 4}}
+        className="flex justify-between items-center h-20 bg-[#141419] px-4"
+      >
         <div className="text-white text-2xl font-bold icon-pulsing">
           <a href="#contact" className="flex items-center">
             <img src={profilePicRightCartoon} alt="Hire Me Button" className="h-16" />
@@ -85,7 +90,7 @@ const NavBar = () => {
             <div className={`h-1 bg-gradient-to-r from-transparent via-white to-transparent ${mobileMenu ? "-rotate-45 -translate-y-1/2" : ""} transition-transform duration-300`}></div>
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Sidebar menu para o mobile, abrir com o hamburguer menu  */}
       {/* {mobileMenu &&

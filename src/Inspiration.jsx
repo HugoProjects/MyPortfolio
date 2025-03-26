@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { TbReload } from "react-icons/tb";
+import { motion } from "framer-motion";
 
 const Inspiration = () => {
   const [quotes, setQuotes] = useState([]); // Lista de quotes
   const [quoteIndex, setQuoteIndex] = useState(0); // Índice da quote atual
-
 
   const fetchQuote = async () => {
 
@@ -54,7 +54,14 @@ const Inspiration = () => {
   };
 
   return (
-    <section id="inspiration" className="py-24 md:py-48 flex flex-col md:flex-row items-center md:items-stretch md:justify-start w-full h-full">
+    <motion.section
+      initial={{opacity:0}}
+      whileInView={{opacity:1}}
+      transition={{duration: 0.5, delay: 0.3}}
+      viewport={{ once: true }}
+      id="inspiration"
+      className="py-24 md:py-48 flex flex-col md:flex-row items-center md:items-stretch md:justify-start w-full h-full"
+    >
       <p className="text-4xl font-semibold xl:whitespace-nowrap group">
         <span tabIndex={0} role="button" className="cursor-pointer" onClick={(e) => {e.currentTarget.blur(); handleQuote();}} onKeyDown={(e) => e.key === 'Enter' && handleQuote()}><span className="group-hover:underline group-hover:underline-offset-8 decoration-blue-200">Get</span> Inspired <TbReload className="text-blue-200 inline align-bottom group-hover:animate-spin group-focus-within:animate-spin"/></span>
       </p>
@@ -71,7 +78,7 @@ const Inspiration = () => {
       ) : (
         <p className="self-center text-white">Loading quote...</p>
       )}
-    </section>
+    </motion.section>
   );
 };
 

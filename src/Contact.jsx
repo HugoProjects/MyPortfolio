@@ -4,6 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { RiMailSendLine } from "react-icons/ri";
 import Modal from "react-modal";
+import { motion } from "framer-motion";
 
 Modal.setAppElement("#root");
 
@@ -44,7 +45,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="flex flex-col md:flex-row justify-center gap-10 md:gap-20 p-6 md:p-12 relative md:w-[95%] lg:w-[85%] xl:w-[80%] mx-auto mb-24 md:mb-56">
+    <motion.section 
+      initial={{opacity:0, y: 50}}
+      whileInView={{opacity:1, y: 0}}
+      transition={{duration: 0.5, delay: 0.1}}
+      viewport={{ once: true }}
+      id="contact"
+      className="flex flex-col md:flex-row justify-center gap-10 md:gap-20 p-6 md:p-12 relative md:w-[95%] lg:w-[85%] xl:w-[80%] mx-auto mb-24 md:mb-56"
+    >
 
       {/* Borda superior e inferior com gradiente */}
       <div className="absolute top-0 left-10 right-10 h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
@@ -98,7 +106,7 @@ const Contact = () => {
         <button onClick={closeModal} className="bg-[rgb(20,20,25)] border-[rgb(20,20,25)] border-2 text-white text-lg font-semibold px-6 py-2 mt-2 rounded-md hover:bg-blue-200 hover:text-[rgb(20,20,25)] focus-visible:bg-blue-200 focus-visible:text-[rgb(20,20,25)]">Close</button>
       </Modal>
 
-    </section>
+    </motion.section>
   )
 }
 

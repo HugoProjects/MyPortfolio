@@ -2,6 +2,7 @@ import MyToDoListPic from './assets/MyToDoListPic.png';
 import BabyMaterPic from './assets/BabyMaterPic.png';
 import AmazonClonePic from './assets/AmazonClonePic.png';
 import RockPaperScissorsPic from './assets/RockPaperScissorsPic.png';
+import { motion } from "framer-motion";
 
 //Lista com os meus projetos
 const projects = [
@@ -38,30 +39,56 @@ const projects = [
 const Projects = () => {
   return (
       <section id="projects" className="flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-semibold">Projects</h1>
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-5 w-[50%]"></div>
+        <motion.h1 
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          transition={{duration: 0.5, delay: 0.1}}
+          viewport={{ once: true }}
+          className="text-4xl font-semibold"
+        >Projects
+        </motion.h1>
 
-        <p className='mt-4 mb-12 text-center'>
+        <motion.div 
+          initial={{opacity: 0}}
+          whileInView={{opacity: 1}}
+          transition={{duration: 0.5, delay: 0.1}}
+          viewport={{ once: true }}
+          className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-5 w-[50%]"
+        >
+        </motion.div>
+
+        <motion.p 
+          initial={{opacity: 0, y: 25}}
+          whileInView={{opacity: 1, y: 0}}
+          transition={{duration: 0.5}}
+          viewport={{ once: true }}
+          className='mt-4 mb-12 text-center'
+        >
           These are some of the projects I've built over time, as I've learned and applied various technologies mentioned above. Each one reflects a step in my development journey and my ongoing commitment to learning and improving as a developer.
-        </p>
+        </motion.p>
 
         {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-[75%] sm:w-full"> */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-[80%] sm:w-[90%] md:w-[85%] lg:w-full">
 
           {projects.map((project, index) => (
 
-            <article key={index} tabIndex={0} className="relative rounded-lg overflow-hidden cursor-pointer group">
+            <motion.article 
+              initial={{opacity: 0, y: 25}}
+              whileInView={{opacity: 1, y: 0}}
+              transition={{duration: 0.5, delay: 0.1}}
+              viewport={{ once: true }}
+              key={index} tabIndex={0} className="relative rounded-lg overflow-hidden cursor-pointer group"
+            >
 
               {/* Imagem de fundo */}
               <div className="absolute -z-1 inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110 group-focus-within:scale-110"
-                style={{ backgroundImage: `url(${project.pic})` }}
-              ></div>
+                style={{ backgroundImage: `url(${project.pic})` }}>
+              </div>
 
               {/* Gradient escuro (desaparece no hover) */}
               <div className="absolute inset-0 bg-[#141419] bg-opacity-10 transition-opacity duration-300 group-hover:bg-opacity-90 group-focus-within:bg-opacity-90"></div>
 
               {/* Conteúdo do card */}
-              {/* <div className="relative flex flex-col items-center justify-center h-full py-12 px-2 gap-8"> */}
               <div className="relative flex flex-col items-center justify-center min-h-72 py-4 px-4 gap-4 group">
 
                 {/* Titulo do card */}
@@ -95,10 +122,9 @@ const Projects = () => {
                   >
                     Repository
                   </a>
-                  
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </section>
