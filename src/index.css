@@ -24,15 +24,9 @@ html {
 
 body {
   min-height: 100vh;
-  /* background-color: rgb(20, 20, 25);  Substituir por --backgroundColor 
-  color: rgb(250, 250, 250); Substituir por --textColor */
-
   background-color: var(--backgroundColor); /* Substituir por --backgroundColor */
   color: var(--textColor); /* Substituir por --textColor */
-
 }
-
-
 
 .light-mode {
   --textColor: rgb(20, 20, 25);
@@ -40,7 +34,7 @@ body {
   --backgroundColor: rgb(240, 240, 255); /* --backgroundColor: rgb(255, 240, 230); */
   --techIconShadowColor: rgba(0, 0, 0, 0.2);
   --lineColor: rgb(40,40,50);
-  --githubColor: #181717;
+  --githubColor: rgb(24, 23, 23);
   font-weight: 500;
 }
 
@@ -53,9 +47,24 @@ body {
   --githubColor: rgb(240,230,230);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+{
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: 0 0 0 0px #ffffff00 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
+/* input:-webkit-autofill {
+  background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+} */
 
-
+/* input:-webkit-autofill {
+  @apply bg-white text-textColor shadow-none;
+} */
 
 .icon-pulsing {
   animation: pulseAndRotate 3s infinite;

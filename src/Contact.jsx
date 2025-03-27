@@ -80,15 +80,15 @@ const Contact = () => {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-1">
             <label htmlFor="name">Name</label>
-            <input id="name" type="text" name="name" placeholder="Name" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[rgb(20,20,25)] p-2"/>
+            <input id="name" type="text" name="name" placeholder="Name" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[rgb(20,20,25)] p-2 bg-white"/>
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="Email" autocomplete="email" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2"/>
+            <input id="email" type="email" name="email" placeholder="Email" autoComplete="email" required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 bg-white"/>
           </div>
           <div className="flex flex-col gap-1">
             <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message..." required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 min-h-48"/>
+            <textarea id="message" name="message" placeholder="Your Message..." required className="text-lg rounded placeholder-[rgba(20,20,25,0.4)] text-[#141419] p-2 min-h-48 bg-white"/>
           </div>
           <button type="submit" className="bg-[rgb(20,20,25)] border-2 border-lineColor text-white text-lg font-semibold w-32 p-2 mt-2 rounded hover:bg-specialTextColor hover:border-specialTextColor hover:text-backgroundColor focus-visible:bg-specialTextColor focus-visible:text-backgroundColor focus-visible:border-specialTextColor active:bg-gray-300 active:border-gray-300 active:text-textColor">Send</button>
         </div>
