@@ -63,20 +63,20 @@ const Inspiration = () => {
       className="py-24 md:py-48 flex flex-col md:flex-row items-center md:items-stretch md:justify-start w-full h-full"
     >
       <p className="text-4xl font-semibold xl:whitespace-nowrap group">
-        <span tabIndex={0} role="button" className="cursor-pointer" onClick={(e) => {e.currentTarget.blur(); handleQuote();}} onKeyDown={(e) => e.key === 'Enter' && handleQuote()}><span className="group-hover:underline group-hover:underline-offset-8 decoration-blue-200">Get</span> Inspired <TbReload className="text-blue-200 inline align-bottom group-hover:animate-spin group-focus-within:animate-spin"/></span>
+        <span tabIndex={0} role="button" className="cursor-pointer" onClick={(e) => {e.currentTarget.blur(); handleQuote();}} onKeyDown={(e) => e.key === 'Enter' && handleQuote()}><span className="group-hover:underline group-hover:underline-offset-8 group-focus-within:underline group-focus-within:underline-offset-8 decoration-specialTextColor">Get</span> Inspired <TbReload className="text-specialTextColor inline align-bottom group-hover:animate-spin group-focus-within:animate-spin"/></span>
       </p>
 
-      <div className="hidden md:block w-[4px] h-[full] bg-gray-300 mx-8"></div>
+      <div className="hidden md:block w-[4px] h-[full] bg-lineColor mx-8"></div>
 
-      <div className="md:hidden h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-8 w-[50%]"></div>
+      <div className="md:hidden h-[1px] bg-gradient-to-r from-transparent via-lineColor to-transparent my-8 w-[50%]"></div>
 
       {quotes.length > 0 ? (
         <blockquote className="self-center">
-          <q className="text-lg text-white">{quotes[quoteIndex]?.q}</q>
-          <address className=" text-white">— {quotes[quoteIndex]?.a}</address>
+          <q className="text-lg text-textColor">{quotes[quoteIndex]?.q}</q>
+          <address className="text-textColor">— {quotes[quoteIndex]?.a}</address>
         </blockquote>
       ) : (
-        <p className="self-center text-white">Loading quote...</p>
+        <p className="self-center text-textColor">Loading quote...</p>
       )}
     </motion.section>
   );

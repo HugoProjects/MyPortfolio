@@ -53,7 +53,7 @@ const Projects = () => {
           whileInView={{opacity: 1}}
           transition={{duration: 0.5, delay: 0.1}}
           viewport={{ once: true }}
-          className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-5 w-[50%]"
+          className="h-[1px] bg-gradient-to-r from-transparent via-lineColor to-transparent my-5 w-[50%]"
         >
         </motion.div>
 
@@ -96,7 +96,7 @@ const Projects = () => {
                   {project.title}
                 </h3>
 
-                <p className='opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 text-center'>{project.description}</p>
+                <p className='opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 text-center text-white font-normal'>{project.description}</p>
 
                 <div className="flex flex-wrap justify-center gap-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 mt-2 mb-3">
                   {project.usedTech.map((tech) => (
@@ -110,7 +110,7 @@ const Projects = () => {
                     href={project.linkDemo}
                     target='_blank'
                     rel="noopener noreferrer"
-                    className="bg-[#141419] text-white font-semibold text-center w-32 px-6 py-2 border-2 rounded-md drop-shadow hover:bg-white hover:text-[#141419] focus-visible:bg-white focus-visible:text-[#141419] transition"
+                    className="bg-backgroundColor text-textColor font-semibold text-center w-32 px-6 py-2 border-2 rounded-md drop-shadow hover:bg-textColor hover:text-backgroundColor focus-visible:bg-textColor focus-visible:text-backgroundColor transition"
                   >
                     View Live
                   </a>
@@ -118,7 +118,7 @@ const Projects = () => {
                     href={project.linkRepo}
                     target='_blank'
                     rel="noopener noreferrer"
-                    className="bg-[#141419] font-semibold text-center w-32 px-6 py-2 border-2 rounded-md drop-shadow hover:bg-white hover:text-[#141419] focus-visible:bg-white focus-visible:text-[#141419] transition"
+                    className="bg-backgroundColor text-textColor font-semibold text-center w-32 px-6 py-2 border-2 rounded-md drop-shadow hover:bg-textColor hover:text-backgroundColor focus-visible:bg-textColor focus-visible:text-backgroundColor transition"
                   >
                     Repository
                   </a>

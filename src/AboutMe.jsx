@@ -48,7 +48,7 @@ const AboutMe = () => {
           transition={{duration: 0.5, delay: 0.7}}
         >
           <span className="opacity-50 block">My name is</span>
-          <span className="text-4xl font-semibold text-blue-200">Hugo Bastos</span>. I am a nice guy, and among many other things, I'm also a <span className='text-yellow-600 font-semibold'>Web Developer</span>.
+          <span className="text-4xl font-semibold text-specialTextColor">Hugo Bastos</span>. I am a nice guy, and among many other things, I'm also a <span className='text-yellow-600 font-semibold'>Web Developer</span>.
           <br/>
           I graduated with a bachelor's degree in Computer Engineering from <a href="https://www.isep.ipp.pt" target="_blank" rel="noopener noreferrer"><abbr title="Instituto Superior de Engenharia do Porto">ISEP</abbr></a> and I have been actively enhancing my web dev skills through various online courses.
           <br/>
@@ -59,7 +59,7 @@ const AboutMe = () => {
           initial={{opacity:0}}
           animate={{opacity:1}}
           transition={{duration: 0.5, delay: 1.3}}
-          className="h-[1px] bg-gradient-to-r from-transparent via-gray-300 to-transparent my-10 w-[50%]">
+          className="h-[1px] bg-gradient-to-r from-transparent via-lineColor to-transparent my-10 w-[50%]">
         </motion.div>
 
         <motion.p 
@@ -125,8 +125,8 @@ const AboutMe = () => {
             </span>
           </motion.div>
           <motion.div variants={techsVariants} className="flex flex-col items-center justify-center gap-1 icon-shadow">
-            <FaGithub className="text-[rgb(240,230,230)]" title="Github"/>
-            <span className="text-base font-semibold bg-gradient-to-b from-[rgba(240,230,230,0)] via-[rgb(240,230,230)] to-[rgba(240,230,230,0)] text-transparent bg-clip-text">
+            <FaGithub className="text-githubColor " title="Github"/>
+            <span className="text-base font-semibold bg-gradient-to-b from-[rgba(240,230,230,0)] via-githubColor to-[rgba(240,230,230,0)] text-transparent bg-clip-text">
               Github
             </span>
           </motion.div>

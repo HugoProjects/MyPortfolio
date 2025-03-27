@@ -5,6 +5,17 @@
     <link rel="icon" type="image/png" href="/HB-Favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hugo Bastos Portfolio</title>
+    <script>
+      (function () {
+        //Para garantir que o tema/theme é aplicado antes de qualquer renderização, reduzindo o efeito de "flash" ao carregar a página (FOUC - Flash of Unstyled Content).
+        const theme = localStorage.getItem("theme") || "dark-mode";
+        document.documentElement.classList.add(theme);
+
+        window.history.scrollRestoration = "manual"; // Impede o navegador de restaurar o scroll (por exemplo dar refresh e continuar no sitio até onde tinha feito scroll)
+        window.scrollTo(0, 0); // Força a página a começar sempre no topo
+        window.history.replaceState(null, null, window.location.pathname); // Restaura o url original (remove qualquer anchor point # depois do refresh, www.site.com/#aboutMe)
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

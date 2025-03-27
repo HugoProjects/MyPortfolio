@@ -24,9 +24,38 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: rgb(20, 20, 25);
-  color: rgb(250, 250, 250);
+  /* background-color: rgb(20, 20, 25);  Substituir por --backgroundColor 
+  color: rgb(250, 250, 250); Substituir por --textColor */
+
+  background-color: var(--backgroundColor); /* Substituir por --backgroundColor */
+  color: var(--textColor); /* Substituir por --textColor */
+
 }
+
+
+
+.light-mode {
+  --textColor: rgb(20, 20, 25);
+  --specialTextColor: rgb(129, 140, 248);
+  --backgroundColor: rgb(240, 240, 255); /* --backgroundColor: rgb(255, 240, 230); */
+  --techIconShadowColor: rgba(0, 0, 0, 0.2);
+  --lineColor: rgb(40,40,50);
+  --githubColor: #181717;
+  font-weight: 500;
+}
+
+.dark-mode {
+  --textColor: rgb(250, 250, 250);
+  --specialTextColor: rgb(191, 219, 254);
+  --backgroundColor: rgb(20, 20, 25);
+  --techIconShadowColor: rgba(255, 255, 255, 0.2);
+  --lineColor: rgb(209, 213, 219);
+  --githubColor: rgb(240,230,230);
+}
+
+
+
+
 
 .icon-pulsing {
   animation: pulseAndRotate 3s infinite;
@@ -71,7 +100,7 @@ body {
 }
 
 .icon-shadow:hover {
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(0 0 5px var(--techIconShadowColor));
 }
 
 .modal-overlay {

@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        backgroundColor: "var(--backgroundColor)",
+        textColor: "var(--textColor)",
+        specialTextColor: "var(--specialTextColor)",
+        lineColor: "var(--lineColor)",
+        githubColor: "var(--githubColor)"
+      }
+    },
   },
   plugins: [],
 }
