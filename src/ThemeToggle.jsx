@@ -23,8 +23,8 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={changeTheme} className="h-full hover:-rotate-90 focus-visible:-rotate-90 transition-transform duration-300 hover:text-lineColor focus-visible:text-lineColor">
-      {theme === "dark-mode" ? <MdLightMode /> : <MdDarkMode />}
+    <button onClick={changeTheme} aria-label="Toggle Light/Dark Mode" className="h-full hover:-rotate-90 focus-visible:-rotate-90 transition-transform duration-300 hover:text-lineColor focus-visible:text-lineColor">
+      {theme === "dark-mode" ? <MdLightMode title="Toggle Light Mode"/> : <MdDarkMode title="Toggle Dark Mode"/>}
     </button>
   )
 }

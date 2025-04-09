@@ -92,9 +92,9 @@ const Projects = () => {
               <div className="relative flex flex-col items-center justify-center min-h-72 py-4 px-4 gap-4 group">
 
                 {/* Titulo do card */}
-                <h3 className="text-2xl text-blue-200 text-center font-semibold opacity-0 transition-opacity duration-300 drop-shadow group-hover:opacity-100 group-focus-within:opacity-100">
+                <h2 className="text-2xl text-blue-200 text-center font-semibold opacity-0 transition-opacity duration-300 drop-shadow group-hover:opacity-100 group-focus-within:opacity-100">
                   {project.title}
-                </h3>
+                </h2>
 
                 <p className='opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 text-center text-white font-normal'>{project.description}</p>
 
