@@ -1,4 +1,5 @@
 import profilePicRightCartoon from './assets/ProfilePic-Right-Cartoon.png';
+import profilePicRightCartoonOpt from './assets/ProfilePic-Right-Cartoon-opt.webp';
 import { ImReply } from "react-icons/im";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
@@ -59,7 +60,7 @@ const NavBar = () => {
       >
         <div className="text-textColor text-2xl font-bold icon-pulsing">
           <a href="#contact" className="flex items-center">
-            <img src={profilePicRightCartoon} alt="Hire Me Button" className="h-16" />
+            <img src={profilePicRightCartoonOpt} alt="Hire Me Button" className="h-16" />
             <p className="typing-effect text-2xl font-semibold text-specialTextColor ml-4">Hire Me</p>
             <ImReply className="text-xl"/>
           </a>
