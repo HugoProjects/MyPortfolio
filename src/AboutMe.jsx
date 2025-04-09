@@ -1,4 +1,4 @@
-import profilePicLeft from './assets/ProfilePic-Left.png';
+import profilePicLeft from './assets/ProfilePic-Left.png'; //Add different image sizes here
 import MemeGlasses from './assets/MemeGlasses.png';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaSass, FaReact, FaGit, FaGithub, FaFigma } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
