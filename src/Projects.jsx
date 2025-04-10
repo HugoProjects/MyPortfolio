@@ -1,6 +1,6 @@
 import MyToDoListPic from './assets/MyToDoListPic.png';
-import BabyMaterPic from './assets/BabyMaterPic.png';
-import AmazonClonePic from './assets/AmazonClonePic.png';
+import BabyMaterPic from './assets/BabyMaterPic-Opt.webp';
+import AmazonClonePic from './assets/AmazonClonePic-Opt.webp';
 import RockPaperScissorsPic from './assets/RockPaperScissorsPic.png';
 import { motion } from "framer-motion";
 

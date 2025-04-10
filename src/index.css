@@ -131,7 +131,6 @@ input:-webkit-autofill:focus
 }
 
 .heroImage{
-  position: relative;
   transition: transform 300ms ease-in-out
 }
 

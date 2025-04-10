@@ -1,4 +1,8 @@
 import profilePicLeft from './assets/ProfilePic-Left.png'; //Add different image sizes here
+import profilePicLeft192 from './assets/ProfilePic-Left-192w.webp';
+import profilePicLeft256 from './assets/ProfilePic-Left-256w.webp';
+import profilePicLeft384 from './assets/ProfilePic-Left-384w.webp';
+import profilePicLeft512 from './assets/ProfilePic-Left-512w.webp';
 import MemeGlasses from './assets/MemeGlasses.png';
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaSass, FaReact, FaGit, FaGithub, FaFigma } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
@@ -150,7 +154,14 @@ const AboutMe = () => {
         animate={{opacity:1}}
         transition={{duration: 1.25, delay: 0.1}}
       >
-        <img src={profilePicLeft} alt='Hugo Bastos Profile Picture' className='max-w-none w-24 sm:w-32 md:w-48 lg:w-64'/>
+        <picture>
+      {/* Dependendo do tamanho do dispositivo, carrega uma imagem diferente (poupa recursos) */}
+          <source media="(max-width: 639px)" srcSet={profilePicLeft192} />
+          <source media="(max-width: 767px)" srcSet={profilePicLeft256} />
+          <source media="(max-width: 1023px)" srcSet={profilePicLeft384} />
+      {/* <source media="(min-width: 1024px)" srcSet={profilePicLeft512} /> //Condição desnecessária, se não passar nas condiçoes anteriores, vai para o fallback (o <img>)*/}
+          <img src={profilePicLeft512} alt='Hugo Bastos Profile Picture' className='max-w-none w-24 sm:w-32 md:w-48 lg:w-64'/>
+        </picture>
         <img src={MemeGlasses} alt='Meme Sunglasses' className='absolute max-w-none w-8 sm:w-10 md:w-16 lg:w-24 top-[26px] left-[28px] sm:top-[35px] sm:left-[37px] md:top-[53px] md:left-[55px] lg:top-[70px] lg:left-[67px] meme'/>
       </motion.div>
 
